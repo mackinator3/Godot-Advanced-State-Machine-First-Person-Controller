@@ -134,7 +134,6 @@ script = ExtResource("2_x12n0")
 forward_move_max_tilt_val = 100.0
 zoom_action = &"play_char_zoom"
 mouse_mode_action = &"play_char_mouse_mode"
-check_on_ready_if_inputs_registered = true
 
 [node name="Camera" type="Camera3D" parent="CameraHolder"]
 unique_name_in_owner = true

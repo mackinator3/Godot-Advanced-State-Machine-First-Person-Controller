@@ -179,11 +179,11 @@ func _ready() -> void:
 	walljump_lock_in_air_movement_time_ref = walljump_lock_in_air_movement_time
 	walljump_lock_in_air_movement_time = -1.0
 	
-	# Build it in runtime to ensure that export variables have been set
 	build_default_keybinding()
 	input_actions_check()
 	
 func build_default_keybinding() -> void:
+	#build it in runtime to ensure that export variables have been set
 	default_input_actions = {
 		move_forward_action : [Key.KEY_W, Key.KEY_UP],
 		move_backward_action : [Key.KEY_S, Key.KEY_DOWN],
@@ -192,9 +192,9 @@ func build_default_keybinding() -> void:
 		run_action : [Key.KEY_SHIFT],
 		crouch_action : [Key.KEY_C],
 		jump_action : [Key.KEY_SPACE],
-		slide_action : [Key.KEY_CTRL],
-		dash_action : [Key.KEY_E],
-		fly_action : [Key.KEY_Q]
+		slide_action : [Key.KEY_C],
+		dash_action : [Key.KEY_CTRL],
+		fly_action : [Key.KEY_F]
 	}
 	
 func input_actions_check() -> void:
@@ -223,6 +223,7 @@ func input_actions_check() -> void:
 					var input_event_key = InputEventKey.new()
 					input_event_key.physical_keycode = keycode
 					InputMap.action_add_event(input_action, input_event_key)
+					print(InputMap.get_actions())
 				
 func _process(delta: float) -> void:
 	wallrun_timer(delta)

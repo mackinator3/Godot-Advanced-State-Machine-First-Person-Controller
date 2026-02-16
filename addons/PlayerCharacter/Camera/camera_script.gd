@@ -87,8 +87,9 @@ func _ready() -> void:
 	input_actions_check()
 
 func build_default_keybinding() -> void:
+	#build it in runtime to ensure that export variables have been set
 	default_input_actions = {
-		zoom_action : [Key.KEY_C, Key.KEY_ALT],
+		zoom_action : [Key.KEY_Z],
 		mouse_mode_action : [Key.KEY_ESCAPE]
 	}
 
