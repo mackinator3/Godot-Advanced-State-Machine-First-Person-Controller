@@ -59,9 +59,7 @@ Download or clone this repository and copy the `addons/` folder into your Godot 
 
 ## Step 2(optional): Set up input actions
 
-The controller requires **12 input actions** to be defined in your project's Input Map. 
-If they are not binded, the default keybindings will be used. 
-Go to **Project > Project Settings > Input Map** and create each of the following actions, then bind them to your preferred keys/buttons:
+The controller requires **12 input actions** to be defined in your project's Input Map. If they are not binded, the default keybindings will be used. Go to **Project > Project Settings > Input Map** and create each of the following actions, then bind them to your preferred keys/buttons:
 
 | Input Action Name | Purpose | Default key |
 |---|---|---|
@@ -72,10 +70,10 @@ Go to **Project > Project Settings > Input Map** and create each of the followin
 | `play_char_run` | Run / sprint | Shift |
 | `play_char_crouch` | Crouch | C |
 | `play_char_jump` | Jump | Space |
-| `play_char_slide` | Slide | Ctrl |
-| `play_char_dash` | Dash | E |
-| `play_char_fly` | Toggle fly mode | Q |
-| `play_char_zoom` | Camera zoom | Alt, C |
+| `play_char_slide` | Slide | C |
+| `play_char_dash` | Dash | CTRL |
+| `play_char_fly` | Toggle fly mode | F |
+| `play_char_zoom` | Camera zoom | Z |
 | `play_char_mouse_mode` | Toggle mouse capture | Esc |
 
 
@@ -152,3 +150,4 @@ The test map includes four interactive zone types that can be reused in your own
 - Godot Theme Prototype Textures by PiCode: https://godotengine.org/asset-library/asset/2480
 - psychowolf960 (GitHub) - Typo fixes and the following movement modifier zones: vertical jump pad, conveyor area, slippery area, gravity area
 - 1000nettles (Github) - Readme file overhaul
+- henkehedstrom (Github) - Default keybinding addition
