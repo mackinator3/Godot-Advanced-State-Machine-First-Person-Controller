@@ -60,6 +60,7 @@ Download or clone this repository and copy the `addons/` folder into your Godot 
 ## Step 2(optional): Set up input actions
 
 The controller requires **12 input actions** to be defined in your project's Input Map. If they are not binded, the default keybindings will be used. Go to **Project > Project Settings > Input Map** and create each of the following actions, then bind them to your preferred keys/buttons:
+By default, the key actions are defined as "play_char_{action_name}_action". Do not change this name unless you have configured your own key bindings.
 
 | Input Action Name | Purpose | Default key |
 |---|---|---|

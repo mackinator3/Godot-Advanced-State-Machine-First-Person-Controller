@@ -81,8 +81,8 @@ var slide_buff_on: bool = false
 
 @export_group("Dash variables")
 var dash_direction: Vector3 = Vector3.ZERO
-@export var dash_speed: float = 120.0
-@export var dash_time: float = 0.11
+@export var dash_speed: float = 100.0
+@export var dash_time: float = 0.1
 var dash_time_ref: float
 @export var nb_dashs_allowed: int = 3
 var nb_dashs_allowed_ref: int
@@ -106,7 +106,7 @@ var wall_forward_dir : Vector3 = Vector3.ZERO
 @export_range(0.0, 1.0, 0.001) var wallrun_fall_gravity_multiplier : float = 0.006
 @export var wallrun_time : float = 3.5
 var wallrun_time_ref : float 
-@export var infinite_wallrun_time : bool = true
+@export var infinite_wallrun_time : bool = false
 @export var time_bef_can_wallrun_again : float = 0.2
 var time_bef_can_wallrun_again_ref : float
 @export var wallrunning_dms_incre : float = 1.0
@@ -114,8 +114,8 @@ var time_bef_can_wallrun_again_ref : float
 @export_group("Walljump variables")
 var about_to_jump_vel : Vector3
 @export var walljump_push_force : float = 14.0
-@export var walljump_y_velocity : float = 8.0
-@export var walljump_lock_in_air_movement_time : float = 0.2
+@export var walljump_y_velocity : float = 9.0
+@export var walljump_lock_in_air_movement_time : float = 0.15
 var walljump_lock_in_air_movement_time_ref : float
 
 @export_group("Fly variables")
@@ -130,16 +130,16 @@ var fly_boost_on: bool = false
 @onready var fall_gravity: float = (-2.0 * jump_height) / (jump_time_to_fall * jump_time_to_fall)
 
 @export_group("Keybind variables")
-@export var move_forward_action: StringName = ""
-@export var move_backward_action: StringName = ""
-@export var move_left_action: StringName = ""
-@export var move_right_action: StringName = ""
-@export var run_action: StringName = ""
-@export var crouch_action: StringName = ""
-@export var jump_action: StringName = ""
-@export var slide_action: StringName = ""
-@export var dash_action: StringName = ""
-@export var fly_action: StringName = ""
+@export var move_forward_action: StringName = "play_char_move_forward_action"
+@export var move_backward_action: StringName = "play_char_move_backward_action"
+@export var move_left_action: StringName = "play_char_move_left_ation"
+@export var move_right_action: StringName = "play_char_move_right_action"
+@export var run_action: StringName = "play_char_run_action"
+@export var crouch_action: StringName = "play_char_crouch_action"
+@export var jump_action: StringName = "play_char_jump_action"
+@export var slide_action: StringName = "play_char_slide_action"
+@export var dash_action: StringName = "play_char_dash_action"
+@export var fly_action: StringName = "play_char_fly_action"
 @onready var input_actions_list : Array[StringName] = [move_forward_action, move_backward_action, move_left_action, move_right_action, 
 run_action, crouch_action, jump_action, slide_action, dash_action, fly_action]
 @export var check_on_ready_if_inputs_registered : bool = true
@@ -223,7 +223,6 @@ func input_actions_check() -> void:
 					var input_event_key = InputEventKey.new()
 					input_event_key.physical_keycode = keycode
 					InputMap.action_add_event(input_action, input_event_key)
-					print(InputMap.get_actions())
 				
 func _process(delta: float) -> void:
 	wallrun_timer(delta)

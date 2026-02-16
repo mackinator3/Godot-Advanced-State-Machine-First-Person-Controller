@@ -23,7 +23,7 @@ class_name CameraObject
 	"Run" : Vector2(100.0, 0.2),
 	"Slide" : Vector2(100.0, 0.2),
 	"Dash" : Vector2(110.0, 0.05),
-	"Fly" : Vector2(90.0, 0.2)
+	"Fly" : Vector2(100.0, 0.2)
 }
 
 @export_group("Zoom variables")
@@ -65,8 +65,8 @@ var step_timer : float = 0.0
 var mouse_free : bool = false
 
 @export_group("Keybind variables")
-@export var zoom_action : StringName = ""
-@export var mouse_mode_action : StringName = ""
+@export var zoom_action : StringName = "play_char_zoom_action"
+@export var mouse_mode_action : StringName = "play_char_mouse_mode_action"
 @onready var input_actions_list : Array[StringName] = [zoom_action, mouse_mode_action]
 @export var check_on_ready_if_inputs_registered : bool = true
 var default_input_actions : Dictionary
